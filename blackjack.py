@@ -9,8 +9,9 @@ logo = """
       `------'                           |__/           
 """
 import random
+
 print(logo)
-deck = ['A',2,3,4,5,6,7,8,9,10,'J','Q','K']
+deck = ['A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K']
 play = input("Do you want to play a game of blackjack? Type 'y' or 'n': ")
 
 while play == 'y':
@@ -31,12 +32,14 @@ while play == 'y':
             computer_scores.append(10)
         elif card == 'A':
             computer_scores.append(11)
-        else: computer_scores.append(card)
+        else:
+            computer_scores.append(card)
 
     user_score = sum(user_scores)
     computer_score = sum(computer_scores)
 
-    print(f"Your Hand: {user_hand[0]} , {user_hand[1]} Score: {user_score}\nOpponent's Hand: {computer_hand[0]} , {computer_hand[1]} Score: {computer_score}")
+    print(
+        f"Your Hand: {user_hand[0]} , {user_hand[1]} Score: {user_score}\nOpponent's Hand: {computer_hand[0]} , {computer_hand[1]} Score: {computer_score}")
 
     if user_score == 21:
         print("You have a blackjack! You win!")
@@ -52,13 +55,15 @@ while play == 'y':
             continue
         else:
             break
-    another_card = input("Would you like another card? Type 'y' or 'no': ")
+    another_card = input("Would you like another card? Type 'y' or 'n': ")
+
 
     def convert(s):
         new = ""
         for element in s:
             new += str(element)
         return new
+
 
     while another_card == 'y':
         user_new_card = random.choice(deck)
@@ -108,11 +113,4 @@ while play == 'y':
             print("Computer busts! You win!")
     play = input("Do you want to play again? Type 'y' or 'n': ")
 
-
-
-
-
-
-
-
-
+print("Thanks for playing!")
