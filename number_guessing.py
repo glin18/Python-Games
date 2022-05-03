@@ -26,12 +26,12 @@ while attempts_remaining > 0:
         print(f"Correct! You win! The answer was {number}")
         break
     if guess > number:
-        print("Too high \nGuess Again")
+        print("Too high")
     if guess < number:
-        print("Too low \nGuess Again")
+        print("Too low")
     attempts_remaining -= 1
     if attempts_remaining == 0:
         print(f"No attempts remaining. The answer was {number}")
-
-
-
+    else:
+        print("Guess Again")
+print("Thanks for playing!")
