@@ -41,6 +41,3 @@ while play:
         print(f"Final Score: {current_score}")
         play = False
 print("Thanks for playing!")
-
-
-
