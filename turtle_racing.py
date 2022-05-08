@@ -16,7 +16,9 @@ screen.setup(width=500, height=400)
 turtles = [turtleOne, turtleTwo, turtleThree, turtleFour, turtleFive, turtleSix]
 y_coord = -125
 i = 0
-
+text = t.Turtle()
+text.penup()
+text.hideturtle()
 for turtle in turtles:
     turtle.shape("turtle")
     turtle.color(colors[i])
@@ -27,22 +29,21 @@ for turtle in turtles:
 
 is_race_on = False
 user_bet = screen.textinput(title="Make your bet", prompt="Which turtle will win the race? Enter a color: ")
-if user_bet:
-    is_race_on = True
 
+if user_bet in colors:
+    is_race_on = True
+else:
+    text.setpos(-180, 0)
+    text.write(f"You are betting on a nonexistent turtle", font=("Lemon", 20, "normal"))
 while is_race_on:
     for turtle in turtles:
         turtle.forward(random.randint(1, 10))
         if turtle.position()[0] > 240:
             is_race_on = False
             index = turtles.index(turtle)
-            text = t.Turtle()
-            text.penup()
-            text.hideturtle()
             text.setpos(-220, 0)
             if user_bet.lower() == colors[index]:
                 text.write(f"You win! The winner is {colors[index]}", font=("Lemon", 30, "normal"))
             else:
                 text.write(f"You lose! The winner is {colors[index]}", font=("Lemon", 30, "normal"))
-            
 screen.exitonclick()
