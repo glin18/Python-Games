@@ -24,4 +24,17 @@ class Ball(Turtle):
         if self.distance(paddle) < 70 and (self.xcor() == 340 or self.xcor() == -340):
             self.x_move = self.x_move * -1
 
+    def right_lose(self):
+        if self.xcor() >= 399:
+            self.goto(0, 0)
+            return True
+        return False
+
+    def left_lose(self):
+        if self.xcor() <= -399:
+            self.goto(0, 0)
+            return True
+        return False
+
+
 

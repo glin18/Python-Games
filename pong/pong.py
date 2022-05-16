@@ -2,6 +2,7 @@ import turtle as t
 from paddle import Paddle
 from ball import Ball
 import time
+from scoreboard import Score
 
 screen = t.Screen()
 
@@ -24,7 +25,7 @@ screen.onkey(paddle2.go_up, "w")
 screen.onkey(paddle2.go_down, "s")
 
 ball = Ball()
-
+score = Score()
 
 game_is_on = True
 while game_is_on:
@@ -35,6 +36,18 @@ while game_is_on:
     ball.check_bounce(paddle2)
     ball.move()
 
+    if ball.right_lose():
+        score.left_score()
+        time.sleep(2)
+        score.clear()
+
+    if ball.left_lose():
+        score.right_score()
+        time.sleep(2)
+        score.clear()
+
+    if score.r_score == 5 or score.l_score == 5:
+        game_is_on = False
 
 
 screen.exitonclick()
