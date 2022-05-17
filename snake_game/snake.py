@@ -45,3 +45,9 @@ class Snake:
 
     def left(self):
         self.segments[0].setheading(LEFT)
+
+    def restart(self):
+        for seg in self.segments:
+            seg.goto(999, 999)
+        self.segments.clear()
+        self.create_snake()
