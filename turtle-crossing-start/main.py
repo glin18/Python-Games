@@ -29,6 +29,7 @@ while game_is_on:
     for vehicle in car_list:
         vehicle.move(level)
         if player.distance(vehicle) < 15:
+            score.game_over(level)
             game_is_on = False
 
     n += 1
