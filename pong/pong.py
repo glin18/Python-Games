@@ -30,7 +30,7 @@ score = Score()
 game_is_on = True
 while game_is_on:
     screen.update()
-    time.sleep(0.0001)
+    time.sleep(0.0013)
     ball.check_collision()
     ball.check_bounce(paddle)
     ball.check_bounce(paddle2)

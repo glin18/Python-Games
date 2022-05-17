@@ -21,7 +21,7 @@ class Ball(Turtle):
             self.y_move = self.y_move * -1
 
     def check_bounce(self, paddle):
-        if self.distance(paddle) < 70 and (self.xcor() == 340 or self.xcor() == -340):
+        if self.distance(paddle) < 90 and (self.xcor() == 340 or self.xcor() == -340):
             self.x_move = self.x_move * -1
 
     def right_lose(self):

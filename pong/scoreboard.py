@@ -26,7 +26,7 @@ class Score(Turtle):
         if self.l_score == 5:
             time.sleep(1)
             self.clear()
-            self.write("GAME OVER RIGHT WINS", font=("Arial", 20, "bold"))
+            self.write("GAME OVER LEFT WINS", font=("Arial", 20, "bold"))
 
 
 
